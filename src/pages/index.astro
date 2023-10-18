@@ -3,110 +3,21 @@ import Layout from "../layouts/BaseLayout.astro"
 import Card from "../components/Card.astro"
 import NavLinks from "../components/NavLinks"
 import { Icon } from "astro-icon"
-import type { Code, Debug } from "astro:components"
+import { profileData } from "../utils/profileData"
 
-type ResumeProps = {
-    role: string
-    company: string
-    duration: {
-        from: Date
-        to: Date | string
-    }
-    link?: string
-    description: string
-    languages: string[]
-}
-
-const resume: ResumeProps[] = [
-    {
-        company: "National Agency for AI and Robotics",
-        role: "Software Developer",
-        link: "https://ncair.nitda.gov.ng/",
-        description: "",
-        duration: { from: new Date("2023-8"), to: "Present" },
-        languages: ["Flutter", "React", "Nodejs", "Python"],
-    },
-    {
-        company: "Freelance",
-        role: "Fullstack Web Developer",
-        description:
-            "Creating web software solutions for client according to their specifications",
-        duration: { from: new Date("2022-9"), to: new Date("2023-7") },
-        languages: [
-            "Next.js",
-            "React",
-            "Typescript",
-            "React Native",
-            "Express.js",
-            "PostgreSQL",
-            "TailwindCSS",
-        ],
-    },
-    {
-        company: "3.14 Limited",
-        role: "Fullstack Web Developer",
-        description: "",
-        link: "https://314ltd.com/",
-        duration: { from: new Date("2022-7"), to: new Date("2022-9") },
-        languages: ["Typscript", "Firebase", "React", "Tailwind", "Nodejs"],
-    },
-    {
-        company: "Yiaga Africa",
-        role: "Fullstack Web Developer - Intern",
-        link: "https://yiaga.org/",
-        description:
-            "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-        duration: { from: new Date("2021-8"), to: new Date("2021-9") },
-        languages: [
-            "Typscript",
-            "Firebase",
-            "Hasura",
-            "GraphQL",
-            "D3.js",
-            "PostgreSQL",
-            "Python",
-        ],
-    },
-    {
-        company: "Logical Address",
-        role: "Fullstack Web Developer",
-        description:
-            "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-        duration: { from: new Date("2019-9"), to: new Date("2019-12") },
-        languages: [
-            "Javascript",
-            "Typscript",
-            "Firebase",
-            "Next.js",
-            "Preact",
-            "Express.js",
-            "Cloudinary",
-        ],
-    },
-    {
-        company: "Mercy Corps",
-        link: "https://nigeria.mercycorps.org/",
-        role: "Mobile Application Developer",
-        description:
-            "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-        duration: { from: new Date("2022-6"), to: new Date("2022-10") },
-        languages: ["Javascript", "Typscript", "Firebase"],
-    },
-]
-
-const changeUrlAnchor = (anchor: string) => {
-    var hash = location.hash.replace("#", anchor)
-    window.addEventListener("hashchange", () => {
-        location.hash.replace("#", hash)
-    })
-}
+// const changeUrlAnchor = (anchor: string) => {
+//     var hash = location.hash.replace("#", anchor)
+//     window.addEventListener("hashchange", () => {
+//         location.hash.replace("#", hash)
+//     })
+// }
 ---
 
 <script>
     document.addEventListener("scroll", () => {
         document.querySelectorAll("section").forEach((element) => {
             let top = window.scrollY
-            let distance = element.offsetTop - (window.scrollY * 0.7)
+            let distance = element.offsetTop - window.scrollY * 0.7
             // let otherDistance = element.offsetTop
             // console.log({ top, distance, otherDistance })
             let hash = `#${element.getAttribute("id")}`
@@ -238,17 +149,18 @@ const changeUrlAnchor = (anchor: string) => {
                 </div>
 
                 <ul class="flex flex-col gap-y-5 lg:gap-y-10 group/cards">
-                    {resume.map((data) => <Card {...data} />)}
+                    {profileData.resume.map((data) => <Card {...data} />)}
                 </ul>
 
                 <button
                     class="text-slate-200 flex flex-row gap-x-1 items-center group mt-6"
                 >
-                    <p
+                    <a
+                        href="/resume"
                         class="group-hover:underline group-hover:decoration-green-400 group-hover:underline-offset-4"
                     >
                         View Full Resume
-                    </p>
+                    </a>
 
                     <svg
                         class="group-hover:translate-x-2 transition-all"

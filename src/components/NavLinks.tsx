@@ -6,7 +6,7 @@ const NavLinks = () => {
         { name: "Experience", link: "#experience" },
     ]
 
-    const [activeAnchor, setActiveAnchor] = useState("")
+    const [activeAnchor, setActiveAnchor] = useState("about")
 
     const changeActiveAnchor = (el: HTMLAnchorElement) => {
         setActiveAnchor(el.hash)
@@ -17,11 +17,17 @@ const NavLinks = () => {
     }
 
     useEffect(() => {
-        setActiveAnchor(`#${document.URL.split("#")[1]}`)
+        console.log(activeAnchor)
+        // console.log(document.URL.split("#")[1])
+        setActiveAnchor(
+            document.URL.split("#").length > 1
+                ? `#${document.URL.split("#")[1]}`
+                : "#about"
+        )
     }, [])
 
     return (
-        <div onScroll={updateAnchor}>
+        <div>
             <ul className="flex flex-col space-y-3">
                 {navLinks.map((nav, index) => (
                     <a
