@@ -4,6 +4,7 @@ import Card from "../components/Card.astro"
 import NavLinks from "../components/NavLinks"
 import { Icon } from "astro-icon"
 import { profileData } from "../utils/profileData"
+import MyPDF from "../components/MyPDF"
 
 // const changeUrlAnchor = (anchor: string) => {
 //     var hash = location.hash.replace("#", anchor)
@@ -155,12 +156,14 @@ import { profileData } from "../utils/profileData"
                 <button
                     class="text-slate-200 flex flex-row gap-x-1 items-center group mt-6"
                 >
-                    <a
+                    <!-- <a
                         href="/resume"
                         class="group-hover:underline group-hover:decoration-green-400 group-hover:underline-offset-4"
                     >
                         View Full Resume
-                    </a>
+                    </a> -->
+
+                    <MyPDF client:load />
 
                     <svg
                         class="group-hover:translate-x-2 transition-all"

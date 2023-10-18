@@ -267,11 +267,11 @@ const MyPDF = () => {
 
     return (
         // <PDFViewer>
-        // <a href={document.url!} download={"Resume.pdf"}>
-        //     Download
-        // </a>
+        <a href={document.url!} download={"Resume - Salim Hussaini.pdf"} className="group-hover:underline group-hover:decoration-green-400 group-hover:underline-offset-4">
+            View Full Resume
+        </a>
         // <div className="flex h-screen w-full">
-        <PDFViewer style={tw("h-screen w-screen")}>{MyDoc}</PDFViewer>
+        // <PDFViewer style={tw("h-screen w-screen")}>{MyDoc}</PDFViewer>
         // </div>
         // </PDFViewer>
     )
