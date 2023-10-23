@@ -79,7 +79,14 @@ const resume: ResumeProps[] = [
             "Develop high-quality applications for a variety of projects by collaborating with founders of startups under the organization. Also \
             taught programming courses under the organizations Digital Training programme.",
         duration: { from: new Date("2023-8"), to: "Present" },
-        languages: ["Flutter", "React", "Nodejs", "Python"],
+        languages: [
+            "Flutter",
+            "Typescript",
+            "React",
+            "Nodejs",
+            "Python",
+            "Tensorflow",
+        ],
         bulletPoints: [
             "Teaching programming classes in Python at the beginner and intermediate levels.",
             "Developed a flutter application that utilizes the TensorflowLite flutter library.",
@@ -173,7 +180,7 @@ const resume: ResumeProps[] = [
         role: "Mobile Application Developer",
         description:
             "Delivered an efficient and accessible social mobile application that would connect people in rural parts of Northern Nigeria and would translate text to a language of their choosing.",
-        duration: { from: new Date("2022-6"), to: new Date("2022-10") },
+        duration: { from: new Date("2019-6"), to: new Date("2019-9") },
         languages: ["Dart", "Flutter", "Firebase", "Pollfish"],
         bulletPoints: [
             "Implemented the internal mobile application according to specifications using Flutter.",
