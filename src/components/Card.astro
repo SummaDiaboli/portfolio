@@ -28,7 +28,7 @@ const formatDate = (value: Date | string) => {
 
 <a href={link} class="cursor-pointer" target="_blank" rel="no-referrer">
     <li
-        class="flex flex-col lg:flex-row gap-x-3 gap-y-2 transition-all rounded-sm group/item hover:bg-gray-400/10 hover:shadow-md lg:px-3 py-5 group-hover/cards:[&:not(:hover)]:opacity-50"
+        class="flex flex-col lg:flex-row gap-x-3 gap-y-2 transition-all rounded-sm group/item hover:bg-gray-400/10 hover:shadow-md lg:px-3 py-5 lg:group-hover/cards:[&:not(:hover)]:opacity-50"
     >
         <p class="min-w-[13rem] text-sm">
             {formatDate(duration.from)} - {formatDate(duration.to)}

@@ -1,5 +1,5 @@
 import React from "react"
-import ReactPDF, {
+import {
     Document,
     Page,
     View,
@@ -10,6 +10,7 @@ import ReactPDF, {
 import {
     usePDF,
     PDFViewer,
+    // @ts-ignore
 } from "@react-pdf/renderer/lib/react-pdf.browser.cjs"
 // import { theme } from "../../tailwind.config.cjs"
 import { createTw } from "react-pdf-tailwind"
@@ -267,9 +268,15 @@ const MyPDF = () => {
 
     return (
         // <PDFViewer>
-        <a href={document.url!} download={"Resume - Salim Hussaini.pdf"} className="group-hover:underline group-hover:decoration-green-400 group-hover:underline-offset-4">
-            View Full Resume
-        </a>
+        document && (
+            <a
+                href={document.url!}
+                download={"Resume - Salim Hussaini.pdf"}
+                className="group-hover:underline group-hover:decoration-green-400 group-hover:underline-offset-4"
+            >
+                View Full Resume
+            </a>
+        )
         // <div className="flex h-screen w-full">
         // <PDFViewer style={tw("h-screen w-screen")}>{MyDoc}</PDFViewer>
         // </div>

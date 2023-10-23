@@ -5,6 +5,7 @@ import NavLinks from "../components/NavLinks"
 import { Icon } from "astro-icon"
 import { profileData } from "../utils/profileData"
 import MyPDF from "../components/MyPDF"
+import ProfileBriefLink from "../components/ProfileBriefLink.astro"
 
 // const changeUrlAnchor = (anchor: string) => {
 //     var hash = location.hash.replace("#", anchor)
@@ -18,17 +19,81 @@ import MyPDF from "../components/MyPDF"
     document.addEventListener("scroll", () => {
         document.querySelectorAll("section").forEach((element) => {
             let top = window.scrollY
-            let distance = element.offsetTop - window.scrollY * 0.7
+            let distance = element.offsetTop - window.scrollY * 0.5
             // let otherDistance = element.offsetTop
             // console.log({ top, distance, otherDistance })
             let hash = `#${element.getAttribute("id")}`
+            
             // console.log({ locationhash: location.hash, hash })
             if (
                 distance < top &&
                 top < distance + element.offsetHeight &&
-                location.hash != hash
+                location.hash !== hash
             ) {
                 history.pushState({}, "", hash)
+                // TODO: Replace with better implementation
+                if (hash === "#experience") {
+                    document
+                        .getElementById("experienceLink")
+                        ?.setAttribute(
+                            "class",
+                            "flex max-w-fit flex-row items-center gap-x-2 group text-slate-200"
+                        )
+                    document
+                        .getElementById("experienceLinkDash")
+                        ?.setAttribute(
+                            "class",
+                            "group-hover:w-14 group-hover:bg-slate-200 transition-all w-14 h-[0.08rem] bg-slate-200"
+                        )
+
+                    document
+                        .getElementById("aboutLink")
+                        ?.setAttribute(
+                            "class",
+                            "flex max-w-fit flex-row items-center gap-x-2 group text-slate-500"
+                        )
+
+                    document
+                        .getElementById("aboutLinkDash")
+                        ?.setAttribute(
+                            "class",
+                            "group-hover:w-14 group-hover:bg-slate-200 transition-all w-7 h-[0.08rem] bg-slate-500"
+                        )
+                } else {
+                    document
+                        .getElementById("aboutLink")
+                        ?.setAttribute(
+                            "class",
+                            "flex max-w-fit flex-row items-center gap-x-2 group text-slate-200"
+                        )
+                    document
+                        .getElementById("aboutLinkDash")
+                        ?.setAttribute(
+                            "class",
+                            "group-hover:w-14 group-hover:bg-slate-200 transition-all w-14 h-[0.08rem] bg-slate-200"
+                        )
+
+                    document
+                        .getElementById("experienceLink")
+                        ?.setAttribute(
+                            "class",
+                            "flex max-w-fit flex-row items-center gap-x-2 group text-slate-500"
+                        )
+
+                    document
+                        .getElementById("experienceLinkDash")
+                        ?.setAttribute(
+                            "class",
+                            "group-hover:w-14 group-hover:bg-slate-200 transition-all w-7 h-[0.08rem] bg-slate-500"
+                        )
+                }
+                // console.log(element.nextSibling)
+                // document
+                //     .getElementById(`${element.getAttribute("id")}Link`)
+                //     ?.setAttribute(
+                //         "class",
+                //         "flex max-w-fit flex-row items-center gap-x-2 group text-slate-200"
+                //     )
                 // window.location.hash = (hash);
                 // currentHash = hash;
             }
@@ -38,7 +103,7 @@ import MyPDF from "../components/MyPDF"
 
 <Layout title="Salim Hussaini">
     <main
-        class="h-screen lg:grid lg:grid-cols-2 lg:justify-items-center lg:px-56 py-10 px-5"
+        class="h-screen lg:grid lg:grid-cols-2 lg:justify-items-center lg:px-56 px-5"
     >
         <div>
             <div
@@ -64,7 +129,7 @@ import MyPDF from "../components/MyPDF"
                     </div>
 
                     <div class="hidden lg:flex">
-                        <NavLinks client:load />
+                        <NavLinks client:only="react" />
                     </div>
                 </div>
 
@@ -104,7 +169,7 @@ import MyPDF from "../components/MyPDF"
         <div class="py-24 flex flex-col space-y-20 lg:space-y-32">
             <section
                 id="about"
-                class="lg:flex lg:flex-col lg:space-y-5 scroll-mt-[7rem]"
+                class="lg:flex lg:flex-col lg:space-y-5 scroll-mt-[7rem] text-justify"
             >
                 <div
                     class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900 75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
@@ -117,24 +182,39 @@ import MyPDF from "../components/MyPDF"
                 </div>
 
                 <p>
-                    Back in 2012, I decided to try my hand at creating custom
-                    Tumblr themes and tumbled head first into the rabbit hole of
-                    coding and web development. Fast-forward to today, and I’ve
-                    had the privilege of building software for an advertising
-                    agency, a start-up, a student-led design studio, and a huge
-                    corporation.
+                    At an early age, I fell in love with the desktop PC my
+                    father bought for himself. I spent so much time on it, even
+                    though it wasn't connected to the internet, messing with
+                    everything I could to fiure out how it worked. Fast-forward
+                    to today, and I’ve had the privilege of building software
+                    for <ProfileBriefLink
+                        url="https://yiaga.org/"
+                        text="NGOs"
+                    />, a
+                    <ProfileBriefLink
+                        url="https://314ltd.com/"
+                        text="Smart Home company"
+                    />, and a <ProfileBriefLink
+                        text={"national organization"}
+                        url={"https://ncair.nitda.gov.ng/"}
+                    />.
                 </p>
                 <p>
-                    My main focus these days is building products and leading
-                    projects for our clients at Upstatement. In my free time
-                    I've also released an online video course that covers
-                    everything you need to know to build a web app with the
-                    Spotify API.
+                    My main focus these days is building products and organizing
+                    projects for <ProfileBriefLink
+                        url="https://ncair.nitda.gov.ng/"
+                        text="NCAIR"
+                    />. In my free time I work on projects with whatever
+                    technology has recently caught my fancy. Just like how this
+                    portfolio was built with <ProfileBriefLink
+                        url="https://astro.build/"
+                        text="Astro"
+                    />.
                 </p>
                 <p>
-                    When I’m not at the computer, I’m usually rock climbing,
-                    hanging out with my wife and two cats, or running around
-                    Hyrule searching for Korok seedsKorok seeds.
+                    When I'm not try out new technologies I'm usually reading a
+                    Sci-fi/Fantasy novel, playing games on my PC, or watching
+                    comedy series.
                 </p>
             </section>
 
@@ -163,7 +243,7 @@ import MyPDF from "../components/MyPDF"
                         View Full Resume
                     </a> -->
 
-                    <MyPDF client:load />
+                    <MyPDF client:only="react" />
 
                     <svg
                         class="group-hover:translate-x-2 transition-all"

@@ -75,7 +75,9 @@ const resume: ResumeProps[] = [
         company: "National Agency for AI and Robotics",
         role: "Software Developer",
         link: "https://ncair.nitda.gov.ng/",
-        description: "",
+        description:
+            "Develop high-quality applications for a variety of projects by collaborating with founders of startups under the organization. Also \
+            taught programming courses under the organizations Digital Training programme.",
         duration: { from: new Date("2023-8"), to: "Present" },
         languages: ["Flutter", "React", "Nodejs", "Python"],
         bulletPoints: [
@@ -88,7 +90,7 @@ const resume: ResumeProps[] = [
         company: "Freelance",
         role: "Fullstack Web Developer",
         description:
-            "Creating web software solutions for client according to their specifications",
+            "Delivered accessible and robust applications for a wide array of projects for public facing businesses.",
         duration: { from: new Date("2022-9"), to: new Date("2023-7") },
         languages: [
             "Next.js",
@@ -109,7 +111,8 @@ const resume: ResumeProps[] = [
     {
         company: "3.14 Limited",
         role: "Fullstack Web Developer",
-        description: "",
+        description:
+            "Developed a web application that would make fuel management easier and more accessible for smart home owners.",
         link: "https://314ltd.com/",
         duration: { from: new Date("2022-7"), to: new Date("2022-9") },
         languages: ["Typscript", "Firebase", "React", "TailwindCSS", "Node.js"],
@@ -125,7 +128,7 @@ const resume: ResumeProps[] = [
         role: "Fullstack Web Developer - Intern",
         link: "https://yiaga.org/",
         description:
-            "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
+            "Collaborated with the legal and tech teams to create an online platform for sensiting Nigerians about the legislature and making more information about political leaders and bills available.",
         duration: { from: new Date("2021-8"), to: new Date("2021-9") },
         languages: [
             "Typscript",
@@ -147,7 +150,7 @@ const resume: ResumeProps[] = [
         company: "Logical Address",
         role: "Fullstack Web Developer",
         description:
-            "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
+            "Developed a social media web platform aimed to bring people together using podcasts and music with a team of fellow students.",
         duration: { from: new Date("2019-9"), to: new Date("2019-12") },
         languages: [
             "Javascript",
@@ -169,9 +172,9 @@ const resume: ResumeProps[] = [
         link: "https://nigeria.mercycorps.org/",
         role: "Mobile Application Developer",
         description:
-            "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
+            "Delivered an efficient and accessible social mobile application that would connect people in rural parts of Northern Nigeria and would translate text to a language of their choosing.",
         duration: { from: new Date("2022-6"), to: new Date("2022-10") },
-        languages: ["Javascript", "Typscript", "Firebase"],
+        languages: ["Dart", "Flutter", "Firebase", "Pollfish"],
         bulletPoints: [
             "Implemented the internal mobile application according to specifications using Flutter.",
             "Integrated the organization's social media feed into the application from the existing Twitter feed.",

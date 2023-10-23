@@ -33,6 +33,7 @@ const NavLinks = () => {
                     <a
                         key={`nav${index}`}
                         href={nav.link}
+                        id={`${nav.name.toLowerCase()}Link`}
                         className={`flex max-w-fit flex-row items-center gap-x-2 group ${
                             nav.link === activeAnchor
                                 ? "text-slate-200"
@@ -41,6 +42,7 @@ const NavLinks = () => {
                         onClick={(e) => changeActiveAnchor(e.currentTarget)}
                     >
                         <div
+                            id={`${nav.name.toLowerCase()}LinkDash`}
                             className={`group-hover:w-14 group-hover:bg-slate-200 transition-all ${
                                 nav.link === activeAnchor
                                     ? "w-14 h-[0.08rem] bg-slate-200"
