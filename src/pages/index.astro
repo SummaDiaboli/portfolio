@@ -23,7 +23,7 @@ import ProfileBriefLink from "../components/ProfileBriefLink.astro"
             // let otherDistance = element.offsetTop
             // console.log({ top, distance, otherDistance })
             let hash = `#${element.getAttribute("id")}`
-            
+
             // console.log({ locationhash: location.hash, hash })
             if (
                 distance < top &&
@@ -103,7 +103,7 @@ import ProfileBriefLink from "../components/ProfileBriefLink.astro"
 
 <Layout title="Salim Hussaini">
     <main
-        class="h-screen lg:grid lg:grid-cols-2 lg:justify-items-center lg:px-56 px-5 py-10 lg:py-0"
+        class="h-screen lg:grid lg:grid-cols-2 lg:justify-items-center lg:px-56 mx-5 py-10 lg:py-0"
     >
         <div>
             <div
@@ -193,7 +193,7 @@ import ProfileBriefLink from "../components/ProfileBriefLink.astro"
                     />, a
                     <ProfileBriefLink
                         url="https://314ltd.com/"
-                        text="Smart Home company"
+                        text="Home Automation company"
                     />, and a <ProfileBriefLink
                         text={"national organization"}
                         url={"https://ncair.nitda.gov.ng/"}
@@ -229,7 +229,7 @@ import ProfileBriefLink from "../components/ProfileBriefLink.astro"
                     </h2>
                 </div>
 
-                <ul class="flex flex-col gap-y-5 lg:gap-y-10 group/cards">
+                <ul class="flex flex-col gap-y-5 lg:gap-y-10 group/cards -m-5">
                     {profileData.resume.map((data) => <Card {...data} />)}
                 </ul>
 
