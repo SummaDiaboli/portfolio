@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/BaseLayout.astro"
-import Card from "../components/Card.astro"
-import NavLinks from "../components/NavLinks"
+import Card from "../components/Home/Card.astro"
+import NavLinks from "../components/Home/NavLinks"
 import { Icon } from "astro-icon"
 import { profileData } from "../utils/profileData"
-import MyPDF from "../components/MyPDF"
-import ProfileBriefLink from "../components/ProfileBriefLink.astro"
+import MyPDF from "../components/Home/MyPDF"
+import ProfileBriefLink from "../components/Home/ProfileBriefLink.astro"
 
 // const changeUrlAnchor = (anchor: string) => {
 //     var hash = location.hash.replace("#", anchor)
@@ -30,7 +30,8 @@ import ProfileBriefLink from "../components/ProfileBriefLink.astro"
                 top < distance + element.offsetHeight &&
                 location.hash !== hash
             ) {
-                history.pushState({}, "", hash)
+                history.replaceState({}, "", hash)
+                // history.pushState({}, "", hash)
                 // TODO: Replace with better implementation
                 if (hash === "#experience") {
                     document
@@ -145,8 +146,8 @@ import ProfileBriefLink from "../components/ProfileBriefLink.astro"
                                 name="github"
                                 pack="fontisto"
                                 class="h-6 text-slate-400 hover:text-slate-200 cursor-pointer"
-                            /></a
-                        >
+                            />
+                        </a>
 
                         <a
                             href="https://www.linkedin.com/in/salim-hussaini-059a33108/"

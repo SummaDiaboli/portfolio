@@ -14,7 +14,7 @@ import {
 } from "@react-pdf/renderer/lib/react-pdf.browser.cjs"
 // import { theme } from "../../tailwind.config.cjs"
 import { createTw } from "react-pdf-tailwind"
-import { profileData } from "../utils/profileData"
+import { profileData } from "../../utils/profileData"
 import { format } from "date-fns"
 import defaultTheme from "tailwindcss/defaultTheme"
 
